@@ -1,0 +1,7 @@
+package com.duarte.demoparkapi.repository;
+
+import com.duarte.demoparkapi.entity.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+}
