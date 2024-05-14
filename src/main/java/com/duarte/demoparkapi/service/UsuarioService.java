@@ -21,7 +21,14 @@ public class UsuarioService {
     @Transactional(readOnly = true)
     public Usuario buscarPorId(Long id) {
         return usuarioRepository.findById(id).orElseThrow(
-                () ->  new RuntimeException("usuario não encontrado")
+                () -> new RuntimeException("usuario não encontrado")
         );
+    }
+
+    @Transactional
+    public Usuario editarSenha(Long id, String password) {
+        Usuario user = buscarPorId(id);
+        user.setPassword(password);
+        return user;
     }
 }
